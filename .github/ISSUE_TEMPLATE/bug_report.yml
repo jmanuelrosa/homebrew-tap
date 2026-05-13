@@ -1,0 +1,73 @@
+name: Cask install/update issue
+description: A `brew install`, `brew upgrade`, or `brew uninstall` against this tap failed or behaved unexpectedly.
+title: "[cask] "
+labels: ["cask-bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for problems with the **cask itself** — download failures, sha256 mismatches, postflight errors, broken `--zap`. For bugs in the apps, file in the app's repo (see the links you saw on the previous page).
+
+  - type: dropdown
+    id: cask
+    attributes:
+      label: Which cask
+      options:
+        - triage
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: One or two sentences.
+      placeholder: "brew install --cask jmanuelrosa/tap/triage exits non-zero with a checksum mismatch."
+    validations:
+      required: true
+
+  - type: textarea
+    id: command
+    attributes:
+      label: Exact command
+      render: shell
+      placeholder: |
+        brew install --cask jmanuelrosa/tap/triage --verbose
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Full output
+      description: Paste the complete brew output — including the URL it tried to download and any error stack.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: brew-version
+    attributes:
+      label: Homebrew version
+      description: From `brew --version`.
+      placeholder: "Homebrew 4.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: "14.5 (Sonoma)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: arch
+    attributes:
+      label: Architecture
+      options:
+        - Apple Silicon (arm64)
+        - Intel (x86_64)
+    validations:
+      required: true
