@@ -14,8 +14,8 @@
 #   4. Users: `brew install --cask jmanuelrosa/tap/triage`.
 
 cask "triage" do
-  version "0.1.0"
-  sha256 "REPLACE_WITH_SHA256_FROM_RELEASE_SHA256SUMS_TXT"
+  version "0.1.1"
+  sha256 "fb0a85b078992d52a747b512b28b913f84578ec48839ddd89b0d9f9bada0a095"
 
   url "https://github.com/jmanuelrosa/triage/releases/download/v#{version}/Triage-#{version}.zip"
   name "Triage"
